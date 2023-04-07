@@ -3,6 +3,8 @@ import Alert from './components/Alert/alert';
 import Menu from './components/Menu/menu';
 import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
+import Tab from './components/Tabs/tab';
+import TabItem from './components/Tabs/tabItem';
 function App() {
   return <>
     <Button>hello</Button>
@@ -21,7 +23,7 @@ function App() {
       <Alert title='标题' type='default' description='描述'></Alert>
       <Alert title='标题' type='warning' description='描述'></Alert>
     </div>
-    <Menu defaultIndex={'0'} onSelect={(index) => {alert(index)}}>
+    <Menu defaultIndex={'0'} onSelect={(index) => {console.log(index)}}>
       <MenuItem>
         普通的菜单
       </MenuItem>
@@ -40,7 +42,7 @@ function App() {
         <a href='https://www.baidu.com'>baidu</a>
       </MenuItem>
     </Menu>
-    <Menu defaultIndex={'0'} onSelect={(index) => {alert(index)}} mode='vertical' defaultOpenSubMenus={['2']}>
+    <Menu defaultIndex={'0'} onSelect={(index) => {console.log(index)}} mode='vertical' defaultOpenSubMenus={['2']}>
       <MenuItem>
         普通的菜单
       </MenuItem>
@@ -59,6 +61,16 @@ function App() {
         <a href='https://www.baidu.com'>baidu</a>
       </MenuItem>
     </Menu>
+    <Tab defaultIndex={0} onSelect={(index) => console.log(index)}>
+      <TabItem label={'label1'}>label1</TabItem>
+      <TabItem label={<span style={{color: 'red'}}>span标签</span>}>span</TabItem>
+      <TabItem label={'disabled'} disabled>disabled</TabItem>
+    </Tab>
+    <Tab defaultIndex={0} onSelect={(index) => console.log(index)} type='card'>
+      <TabItem label={'label1'}>label1</TabItem>
+      <TabItem label={<span style={{color: 'red'}}>span标签</span>}>span</TabItem>
+      <TabItem label={'disabled'} disabled>disabled</TabItem>
+    </Tab>
   </>
 }
 
