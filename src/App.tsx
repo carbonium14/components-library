@@ -5,6 +5,10 @@ import MenuItem from './components/Menu/menuItem';
 import SubMenu from './components/Menu/subMenu';
 import Tab from './components/Tabs/tab';
 import TabItem from './components/Tabs/tabItem';
+import Icon from './components/Icon/icon';
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+library.add(fas)
 function App() {
   return <>
     <Button>hello</Button>
@@ -49,7 +53,15 @@ function App() {
       <MenuItem disabled>
         屏蔽的菜单
       </MenuItem>
-      <SubMenu title='dropdown'>
+      <SubMenu title='自动打开的submenu'>
+        <MenuItem>
+          下拉菜单
+        </MenuItem>
+        <MenuItem>
+          可以自动出现
+        </MenuItem>
+      </SubMenu>
+      <SubMenu title='不会自动打开的submenu'>
         <MenuItem>
           下拉菜单
         </MenuItem>
@@ -71,6 +83,8 @@ function App() {
       <TabItem label={<span style={{color: 'red'}}>span标签</span>}>span</TabItem>
       <TabItem label={'disabled'} disabled>disabled</TabItem>
     </Tab>
+    <Icon icon="coffee" theme='danger' size='10x'></Icon>
+    <Icon icon="coffee" theme='primary' size='10x'></Icon>
   </>
 }
 
