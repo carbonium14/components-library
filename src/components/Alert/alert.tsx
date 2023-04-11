@@ -10,7 +10,7 @@ export interface AlertProps {
   onClose?: () => void,
   closable?: boolean
 }
-const Alert:React.FC<AlertProps> = (props) => {
+export const Alert:React.FC<AlertProps> = (props) => {
   const [hide, setHide] = useState(false)
   const {title, description, type, onClose, closable} = props
   const classes = classNames('alert', {

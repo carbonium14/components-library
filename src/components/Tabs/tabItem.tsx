@@ -4,7 +4,7 @@ export interface TabItemProps {
   disabled?: boolean,
   children?: React.ReactNode
 }
-const TabItem:React.FC<TabItemProps> = (props) => {
+export const TabItem:React.FC<TabItemProps> = (props) => {
   const { children } = props
   return <div className='tab-panel'>
     {children}

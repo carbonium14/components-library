@@ -8,7 +8,7 @@ export interface TabProps {
   type?: 'line' | 'card',
   children?: React.ReactNode
 }
-const Tab:React.FC<TabProps> = (props) => {
+export const Tab:React.FC<TabProps> = (props) => {
   const { defaultIndex, className, onSelect, type, children } = props
   const [activeIndex, setActiveIndex] = useState(defaultIndex)
   const handleClick = (e:React.MouseEvent, index:number, disabled?:boolean) => {
