@@ -10,6 +10,7 @@ import Input from './components/Input/input';
 import AutoComplete, { DataSourceType } from './components/AutoComplete/autoComplete';
 import Select from './components/Select/select';
 import Option from './components/Select/option';
+import Upload from './components/Upload/upload';
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 library.add(fas)
@@ -66,6 +67,13 @@ function App() {
         <span>url: {itemWithGithub.url}</span>
       </>
     )
+  }
+  const checkFileSize = (file: File) => {
+    if (Math.round(file.size / 1024) > 50) {
+      alert('file too big')
+      return false;
+    }
+    return true;
   }
   return <>
     <Button>hello</Button>
@@ -179,6 +187,19 @@ function App() {
       <Option value="nihao3" />
       <Option value="nihao6" label="nihao66"/>
     </Select>
+    <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" 
+      onProgress={(p, f) => console.log(p, f)} onSuccess={(d, f) => console.log(d, f)}
+      onError={(e, f) => console.log(e, f)} onChange={(f) => console.log(f)} onRemove={(f) => console.log(f)}>
+      <Button size={ButtonSize.Large} btnType={ButtonType.Primary}><Icon icon="upload" /> 点击上传 </Button>
+    </Upload>
+    <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" beforeUpload={checkFileSize}>
+      <Button size={ButtonSize.Large} btnType={ButtonType.Primary}><Icon icon="upload" /> 不能传大于50Kb! </Button>
+    </Upload>
+    <Upload action="https://www.mocky.io/v2/5cc8019d300000980a055e76" name="fileName" multiple drag>
+      <Icon icon="upload" size="5x" theme="secondary" />
+      <br/>
+      <p>点击或者拖动到此区域进行上传</p>
+    </Upload>
   </>
 }
 
