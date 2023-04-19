@@ -10,7 +10,7 @@ interface GithubUserProps {
   avatar_url: string;
 }
 export default { 
-  title: 'AutoComplete组件',
+  title: 'AutoComplete',
   component: AutoComplete,
   id: 'AutoComplete',
   parameters: {
@@ -22,20 +22,15 @@ export default {
   }
 } as Meta<typeof AutoComplete>
 export const ASimpleComplete: StoryFn<typeof AutoComplete> = (args) => {
-  const lakers = ['bradley', 'pope', 'caruso', 'cook', 'cousins',
-  'james', 'AD', 'green', 'howard', 'kuzma', 'McGee', 'rando']
+  const lakers = ['bradley', 'pope', 'caruso', 'cook', 'cousins', 'james', 'AD', 'green', 'howard', 'kuzma', 'McGee', 'rando']
   const handleFetch = (query: string) => {
     return lakers.filter(name => name.includes(query)).map(name => ({value: name}))
   }
   return (
-    <AutoComplete
-      {...args}
-      fetchSuggestions={handleFetch}
-      placeholder="输入湖人队球员英文名试试"
-    />
+    <AutoComplete {...args} fetchSuggestions={handleFetch} placeholder="输入湖人队球员英文名试试"/>
   )
 }
-ASimpleComplete.storyName = '1 基本的搜索'
+ASimpleComplete.storyName = '基本的搜索'
 export const BCustomComplete = (args:any) => {
   const lakersWithNumber = [
     {value: 'bradley', number: 11},
@@ -62,15 +57,10 @@ export const BCustomComplete = (args:any) => {
     )
   }
   return (
-    <AutoComplete
-      {...args}
-      fetchSuggestions={handleFetch}
-      placeholder="输入湖人队球员英文,自定义下拉模版"
-      renderOption={renderOption}
-    />
+    <AutoComplete {...args} fetchSuggestions={handleFetch} placeholder="输入湖人队球员英文,自定义下拉模版" renderOption={renderOption}/>
   )
 }
-BCustomComplete.storyName = '2 自定义搜索结果模版'
+BCustomComplete.storyName = '自定义搜索结果模版'
 export const CAjaxComplete = (args:any) => {
   const handleFetch = (query: string) => {
     return fetch(`https://api.github.com/search/users?q=${query}`)
@@ -89,12 +79,7 @@ export const CAjaxComplete = (args:any) => {
     )
   }
   return (
-    <AutoComplete
-      {...args}
-      fetchSuggestions={handleFetch}
-      placeholder="输入 Github 用户名试试"
-      renderOption={renderOption}
-    />
+    <AutoComplete {...args} fetchSuggestions={handleFetch} placeholder="输入 Github 用户名试试" renderOption={renderOption}/>
   )
 }
-CAjaxComplete.storyName = '3 支持异步搜索'
+CAjaxComplete.storyName = '支持异步搜索'
