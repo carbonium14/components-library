@@ -5,6 +5,7 @@ import Icon from '../Icon/icon'
 export default {
   title: 'tabs',
   component: Tabs,
+  tags: ['autodocs'],
   subcomponents: { 
     'TabItem': TabItem 
   }

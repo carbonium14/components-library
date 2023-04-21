@@ -3,8 +3,8 @@ import Icon from './icon'
 import Button, { ButtonSize, ButtonType } from '../Button/button'
 export default { 
   title: 'Icon',
-  id: 'Icon',
   component: Icon,
+  tags: ['autodocs']
 } as Meta<typeof Icon>
 export const ADefaultIcons = () => (
   <>

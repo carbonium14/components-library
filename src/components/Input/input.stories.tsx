@@ -2,7 +2,7 @@ import { StoryFn, Meta } from '@storybook/react'
 import { Input } from './input'
 export default {
   title: 'Input',
-  id: 'Input',
+  tags: ['autodocs'],
   component: Input,
   decorators: [
     (Story) => (

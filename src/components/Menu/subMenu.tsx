@@ -5,7 +5,7 @@ import { MenuItemProps } from "./menuItem";
 import Icon from "../Icon/icon";
 import Transition from "../Transition/transition";
 // import useClickOutside from "../../hooks/useClickOutside";
-interface SubMenuProps {
+export interface SubMenuProps {
   index?: string,
   title: string,
   className?: string,

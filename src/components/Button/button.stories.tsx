@@ -2,7 +2,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import Button, { ButtonType, ButtonSize } from './button'
 export default {
   title: 'Button',
-  component: Button
+  component: Button,
+  tags: ['autodocs']
 } as Meta<typeof Button>
 const Template: StoryFn<typeof Button> = (args) => (
   <Button {...args}></Button>

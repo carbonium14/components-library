@@ -12,7 +12,7 @@ interface GithubUserProps {
 export default { 
   title: 'AutoComplete',
   component: AutoComplete,
-  id: 'AutoComplete',
+  tags: ['autodocs'],
   parameters: {
     docs: {
       source: {

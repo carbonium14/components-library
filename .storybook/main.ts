@@ -13,6 +13,7 @@ const config: StorybookConfig = {
   },
   docs: {
     autodocs: "tag",
+    defaultName: '文档说明',
   },
   staticDirs: ["..\\public"],
 };

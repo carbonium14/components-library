@@ -4,7 +4,7 @@ import Option from './option'
 export default {
   title: 'Select',
   component: Select,
-  id: 'Select',
+  tags: ['autodocs'],
   subcomponents: { 'Option': Option },
   decorators: [
     (Story) => (

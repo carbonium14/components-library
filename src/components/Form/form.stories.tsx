@@ -9,8 +9,8 @@ import Option from '../Select/option'
 import { CustomRule } from './useStore'
 const meta: Meta<typeof Form> = { 
   title: 'Form',
-  id: 'Form',
   component: Form,
+  tags: ['autodocs'],
   decorators: [
     (Story) => (
       <div style={{ width: '550px' }}>

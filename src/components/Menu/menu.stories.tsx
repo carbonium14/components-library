@@ -4,7 +4,7 @@ import MenuItem from './menuItem'
 import SubMenu from './subMenu'
 export default {
   title: 'Menu',
-  id: 'Menu',
+  tags: ['autodocs'],
   component: Menu,
   subcomponents: { 
     'SubMenu': SubMenu, 

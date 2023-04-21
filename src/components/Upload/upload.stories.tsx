@@ -4,7 +4,7 @@ import Button, { ButtonSize, ButtonType } from '../Button/button'
 import Icon from '../Icon/icon'
 export default { 
   title: 'Upload',
-  id: 'Upload',
+  tags: ['autodocs'],
   component: Upload,
   parameters: {
     docs: {

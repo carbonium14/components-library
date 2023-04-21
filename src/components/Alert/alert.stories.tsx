@@ -2,7 +2,8 @@ import { StoryFn, Meta } from '@storybook/react'
 import Alert from './alert'
 const alertMeta:Meta<typeof Alert> = {
   title: 'Alert',
-  component: Alert
+  component: Alert,
+  tags: ['autodocs']
 }
 export default alertMeta
 const Template: StoryFn<typeof Alert> = (args) => (
