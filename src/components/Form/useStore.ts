@@ -1,6 +1,7 @@
 import { useState, useReducer } from "react"
 import Schema, { RuleItem, ValidateError } from "async-validator"
-import { mapValues, each } from 'lodash-es'
+import mapValues from 'lodash-es/mapValues'
+import each from 'lodash-es/each'
 export type CustomRuleFunc = ({ getFieldValue }: any) => RuleItem
 export type CustomRule = RuleItem | CustomRuleFunc
 export interface FieldDetail {
